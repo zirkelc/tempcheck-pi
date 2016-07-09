@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TempCheckPi", "TempCheckPi\TempCheckPi.pyproj", "{A7C2B83D-8260-4A14-810F-7F1D75111B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempCheckPiCs", "TempCheckPiCs\TempCheckPiCs.csproj", "{F3863392-A90F-4DF4-AEA2-9633DA745F3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|ARM.Build.0 = Debug|ARM
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|x64.ActiveCfg = Debug|x64
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|x64.Build.0 = Debug|x64
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|x64.Deploy.0 = Debug|x64
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|x86.ActiveCfg = Debug|x86
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|x86.Build.0 = Debug|x86
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Debug|x86.Deploy.0 = Debug|x86
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|ARM.ActiveCfg = Release|ARM
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|ARM.Build.0 = Release|ARM
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|ARM.Deploy.0 = Release|ARM
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|x64.ActiveCfg = Release|x64
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|x64.Build.0 = Release|x64
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|x64.Deploy.0 = Release|x64
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|x86.ActiveCfg = Release|x86
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|x86.Build.0 = Release|x86
+		{A7C2B83D-8260-4A14-810F-7F1D75111B4E}.Release|x86.Deploy.0 = Release|x86
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|ARM.ActiveCfg = Debug|ARM
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|ARM.Build.0 = Debug|ARM
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|ARM.Deploy.0 = Debug|ARM
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|x64.ActiveCfg = Debug|x64
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|x64.Build.0 = Debug|x64
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|x64.Deploy.0 = Debug|x64
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|x86.ActiveCfg = Debug|x86
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|x86.Build.0 = Debug|x86
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Debug|x86.Deploy.0 = Debug|x86
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|ARM.ActiveCfg = Release|ARM
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|ARM.Build.0 = Release|ARM
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|ARM.Deploy.0 = Release|ARM
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|x64.ActiveCfg = Release|x64
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|x64.Build.0 = Release|x64
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|x64.Deploy.0 = Release|x64
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|x86.ActiveCfg = Release|x86
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|x86.Build.0 = Release|x86
+		{F3863392-A90F-4DF4-AEA2-9633DA745F3A}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
