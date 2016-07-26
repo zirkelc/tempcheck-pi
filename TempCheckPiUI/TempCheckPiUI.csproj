@@ -98,15 +98,46 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Presenters\BluetoothDisplayHelpers.cs" />
+    <Compile Include="Presenters\ConnectedDevicePresenter.cs" />
+    <Compile Include="Presenters\DeviceInfoPresenter.cs" />
+    <Compile Include="Presenters\LanguageManager.cs" />
+    <Compile Include="Presenters\NetworkPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thermocouple.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\DeviceTypeInformation.cs" />
+    <Compile Include="Utils\NativeTimeMethods.cs" />
+    <Compile Include="Utils\NavigationUtils.cs" />
+    <Compile Include="Utils\WifiGlyphConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <PRIResource Include="Strings\ar-SA\Resources.resw" />
+    <PRIResource Include="Strings\de-DE\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <PRIResource Include="Strings\es-ES\Resources.resw" />
+    <PRIResource Include="Strings\fr-FR\Resources.resw" />
+    <PRIResource Include="Strings\it-IT\Resources.resw" />
+    <PRIResource Include="Strings\ja-JP\Resources.resw" />
+    <PRIResource Include="Strings\ko-KR\Resources.resw" />
+    <PRIResource Include="Strings\nl-NL\Resources.resw" />
+    <PRIResource Include="Strings\pt-BR\Resources.resw" />
+    <PRIResource Include="Strings\ru-RU\Resources.resw" />
+    <PRIResource Include="Strings\zh-CN\Resources.resw" />
+    <PRIResource Include="Strings\zh-TW\Resources.resw" />
     <None Include="TempCheckPiUI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\DB410-tutorials.png" />
+    <Content Include="Assets\DB410Board.png" />
+    <Content Include="Assets\GenericBoard.png" />
+    <Content Include="Assets\MBMBoard.png" />
+    <Content Include="Assets\RaspberryPiBoard.png" />
+    <Content Include="Assets\rpi2-tutorials.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -125,11 +156,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsIoT, Version=10.0.10586.0">
       <Name>Windows IoT Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Fonts\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
