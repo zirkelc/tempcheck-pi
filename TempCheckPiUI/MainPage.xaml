@@ -13,7 +13,7 @@
             <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="2" IsHitTestVisible="False" ItemHeight="230"/>
         </ItemsPanelTemplate>
         <DataTemplate x:Name="NetworkInfoDataTemplate">
-            <StackPanel Background="Red" HorizontalAlignment="Left">
+            <StackPanel Background="Red" HorizontalAlignment="Stretch">
                 <TextBlock Text="Network name" Style="{StaticResource BaseTextBlockStyle}" Margin="0,14,0,0" />
                 <TextBlock Text="{Binding NetworkName}" Foreground="{StaticResource PaleTextBrush}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0" />
 
@@ -75,7 +75,7 @@
                 </Grid>
             </Button>
 
-            <!--<Button Grid.Column="2" x:Name="Tutorials" Style="{StaticResource ShutdownButtonStyle}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Tutorials_Clicked">
+            <Button Grid.Column="2" x:Name="Bluetooth" Style="{StaticResource ShutdownButtonStyle}" Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="Bluetooth_Clicked">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -84,9 +84,9 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="1" FontFamily="{StaticResource IconFontFamily}" FontSize="24" Text="{StaticResource IconEducation}" TextAlignment="Center"/>
-                    <TextBlock Grid.Row="2" Text="{Binding [TutorialsText]}" Style="{StaticResource CaptionTextBlockStyle}" TextAlignment="Center" Margin="0,5,0,0"/>
+                    <TextBlock Grid.Row="2" Text="Bluetooth" Style="{StaticResource CaptionTextBlockStyle}" TextAlignment="Center" Margin="0,5,0,0"/>
                 </Grid>
-            </Button>-->
+            </Button>
 
             <TextBlock Grid.Column="3" x:Name="CurrentTime" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Right" Style="{StaticResource IoTCoreDefaultAppBodyTextBlockStyle}" VerticalAlignment="Center" Padding="0,0,14,0"/>
 
@@ -162,12 +162,12 @@
                 <StackPanel Grid.Column="6">
                     <TextBlock Text="{Binding [NetworkInformationText]}" FontFamily="Segoe UI Regular" FontSize="16"/>
 
-                    <ListView x:Name="NetworkInfo" ItemsPanel="{StaticResource NetworkInfoPanelTemplate}" ItemTemplate="{StaticResource NetworkInfoDataTemplate}" Background="Blue" HorizontalAlignment="Left" HorizontalContentAlignment="Left" >
+                    <ListView x:Name="NetworkInfo" ItemsPanel="{StaticResource NetworkInfoPanelTemplate}" ItemTemplate="{StaticResource NetworkInfoDataTemplate}" Background="Blue" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" >
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
-                                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                                 <Setter Property="VerticalContentAlignment" Value="Top" />
-                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                <Setter Property="HorizontalAlignment" Value="Stretch" />
                                 <Setter Property="VerticalAlignment" Value="Top" />
                             </Style>
                         </ListView.ItemContainerStyle>

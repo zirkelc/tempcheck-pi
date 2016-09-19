@@ -4,6 +4,8 @@ namespace TempCheckPiUI
 {
     public static class Constants
     {
+        public static readonly string DeviceId = "TempCheck-1337";
+
         public static string HasDoneOOBEKey = "DefaultAppHasDoneOOBE";
         public static string HasDoneOOBEValue = "YES";
         public static string EnableScreensaverKey = "DefaultAppEnableScreensaver";

@@ -1,9 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using TempCheckPiUI.Models;
+using TempCheckPiUI.Services;
+using Windows.Devices.Bluetooth.GenericAttributeProfile;
+using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Networking.Connectivity;
@@ -78,7 +84,7 @@ namespace TempCheckPiUI
                 thermocouple.InitSpi();
 
                 timer = new DispatcherTimer();
-                timer.Tick += timer_Tick;
+                timer.Tick += OnTimerTick;
                 timer.Interval = TimeSpan.FromSeconds(10);
                 timer.Start();
             };
@@ -107,10 +113,10 @@ namespace TempCheckPiUI
             });
         }
 
-        private void timer_Tick(object sender, object e)
+        private async void OnTimerTick(object sender, object e)
         {
             UpdateDateTime();
-            UpdateTemperature();
+            await UpdateTemperature();
         }
 
         private void UpdateQrCode()
@@ -124,11 +130,67 @@ namespace TempCheckPiUI
             QrCodeImage.Source = result.ToBitmap() as WriteableBitmap;
         }
 
-        private void UpdateTemperature()
+        private async Task UpdateTemperature()
         {
-            var temp = thermocouple.ReadTempC();
-            Temperature.Text = string.Format("{0} °C", temp.ToString());
+            var value = thermocouple.ReadTempC();
+            Temperature.Text = string.Format("{0} °C", value.ToString());
+
+            Temperature temperature = new Temperature
+            {
+                DeviceId = Constants.DeviceId,
+                Timestamp = DateTime.Now,
+                Value = value
+            };
+
+            await AWSMobileServices.Instance.SaveAsync(temperature);
         }
+
+    //    private async Task UpdateBluetooth()
+    //    {
+    //        var themometerServices = await Windows.Devices.Enumeration.DeviceInformation.FindAllAsync(GattDeviceService.GetDeviceSelectorFromUuid(GattServiceUuids.GenericAccess), null);
+
+    //        GattDeviceService firstThermometerService = await
+    //            GattDeviceService.FromIdAsync(themometerServices[0].Id);
+
+    //        Debug.WriteLine("Using service: " + themometerServices[0].Name);
+
+    //        GattCharacteristic thermometerCharacteristic =
+    //            firstThermometerService.GetCharacteristics(
+    //                GattCharacteristicUuids.BatteryLevel)[0];
+
+    //        thermometerCharacteristic.ValueChanged += temperatureMeasurementChanged;
+
+    //        await thermometerCharacteristic
+    //            .WriteClientCharacteristicConfigurationDescriptorAsync(
+    //                GattClientCharacteristicConfigurationDescriptorValue.Notify);
+    //    }
+
+    //    void temperatureMeasurementChanged(
+    //GattCharacteristic sender,
+    //GattValueChangedEventArgs eventArgs)
+    //    {
+    //        byte[] temperatureData = new byte[eventArgs.CharacteristicValue.Length];
+    //        Windows.Storage.Streams.DataReader.FromBuffer(
+    //            eventArgs.CharacteristicValue).ReadBytes(temperatureData);
+
+    //        var temperatureValue = convertTemperatureData(temperatureData);
+
+    //        //temperatureTextBlock.Text = temperatureValue.ToString();
+    //    }
+
+    //    double convertTemperatureData(byte[] temperatureData)
+    //    {
+    //        // Read temperature data in IEEE 11703 floating point format
+    //        // temperatureData[0] contains flags about optional data - not used
+    //        UInt32 mantissa = ((UInt32)temperatureData[3] << 16) |
+    //            ((UInt32)temperatureData[2] << 8) |
+    //            ((UInt32)temperatureData[1]);
+
+    //        Int32 exponent = (Int32)temperatureData[4];
+
+    //        return mantissa * Math.Pow(10.0, exponent);
+    //    }
+
 
         private void UpdateBoardInfo()
         {
@@ -190,14 +252,17 @@ namespace TempCheckPiUI
             //NavigationUtils.NavigateToScreen(typeof(Settings));
         }
 
-        private void Tutorials_Clicked(object sender, RoutedEventArgs e)
+        private async void Bluetooth_Clicked(object sender, RoutedEventArgs e)
         {
-            //NavigationUtils.NavigateToScreen(typeof(TutorialMainPage));
+            //DevicePicker devicePicker = new DevicePicker();
+            //devicePicker.Show(new Rect(0, 0, 300, 300));
+
+            //await UpdateBluetooth();
         }
 
         private void ShutdownHelper(ShutdownKind kind)
         {
-            new System.Threading.Tasks.Task(() =>
+            new Task(() =>
             {
                 ShutdownManager.BeginShutdown(kind, TimeSpan.FromSeconds(0));
             }).Start();
@@ -234,27 +299,4 @@ namespace TempCheckPiUI
             ShutdownDropdown.HorizontalOffset = offset;
         }
     }
-
-    //Thermocouple thermocouple;
-
-    //public MainPage()
-    //{
-    //    this.InitializeComponent();
-
-    //    thermocouple = new Thermocouple();
-    //    thermocouple.InitSpi();
-
-    //    var timer = new DispatcherTimer();
-    //    timer.Tick += OnTimerTick;
-    //    timer.Interval = TimeSpan.FromMilliseconds(5000);
-    //    timer.Start();
-    //}
-
-    //private void OnTimerTick(object sender, object e)
-    //{
-    //    var temp = thermocouple.ReadTempC();
-
-    //    DateTimeTxt.Text = DateTime.Now.ToString();
-    //    TemperatureTxt.Text = temp.ToString();
-    //}
 }
