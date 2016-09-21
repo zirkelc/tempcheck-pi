@@ -11,15 +11,15 @@ using TempCheckPiUI.Models;
 
 namespace TempCheckPiUI.Services
 {
-    public class AWSMobileServices
+    public class AmazonWebService
     {
-        private static AWSMobileServices instance;
+        private static AmazonWebService instance;
 
-        public static AWSMobileServices Instance
+        public static AmazonWebService Instance
         {
             get
             {
-                return instance ?? (instance = new AWSMobileServices());
+                return instance ?? (instance = new AmazonWebService());
             }
         }
 
@@ -41,7 +41,7 @@ namespace TempCheckPiUI.Services
             private set;
         }
 
-        private AWSMobileServices()
+        private AmazonWebService()
         {
             AWSConfigs.LoggingConfig.LogMetrics = true;
             AWSConfigs.LoggingConfig.LogResponses = ResponseLoggingOption.Always;

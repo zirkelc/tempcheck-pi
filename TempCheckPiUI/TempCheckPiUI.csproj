@@ -106,7 +106,7 @@
     <Compile Include="Presenters\LanguageManager.cs" />
     <Compile Include="Presenters\NetworkPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AWSMobileServices.cs" />
+    <Compile Include="Services\AmazonWebService.cs" />
     <Compile Include="Thermocouple.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\DeviceTypeInformation.cs" />

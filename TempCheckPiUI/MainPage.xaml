@@ -13,7 +13,7 @@
             <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="2" IsHitTestVisible="False" ItemHeight="230"/>
         </ItemsPanelTemplate>
         <DataTemplate x:Name="NetworkInfoDataTemplate">
-            <StackPanel Background="Red" HorizontalAlignment="Stretch">
+            <StackPanel HorizontalAlignment="Stretch">
                 <TextBlock Text="Network name" Style="{StaticResource BaseTextBlockStyle}" Margin="0,14,0,0" />
                 <TextBlock Text="{Binding NetworkName}" Foreground="{StaticResource PaleTextBrush}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,0" />
 
@@ -162,7 +162,7 @@
                 <StackPanel Grid.Column="6">
                     <TextBlock Text="{Binding [NetworkInformationText]}" FontFamily="Segoe UI Regular" FontSize="16"/>
 
-                    <ListView x:Name="NetworkInfo" ItemsPanel="{StaticResource NetworkInfoPanelTemplate}" ItemTemplate="{StaticResource NetworkInfoDataTemplate}" Background="Blue" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+                    <ListView x:Name="NetworkInfo" ItemsPanel="{StaticResource NetworkInfoPanelTemplate}" ItemTemplate="{StaticResource NetworkInfoDataTemplate}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" >
                         <ListView.ItemContainerStyle>
                             <Style TargetType="ListViewItem">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />

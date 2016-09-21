@@ -142,7 +142,7 @@ namespace TempCheckPiUI
                 Value = value
             };
 
-            await AWSMobileServices.Instance.SaveAsync(temperature);
+            await AmazonWebService.Instance.SaveAsync(temperature);
         }
 
     //    private async Task UpdateBluetooth()
