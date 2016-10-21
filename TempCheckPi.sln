@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TempCheckPi", "TempCheckPi\TempCheckPi.pyproj", "{A7C2B83D-8260-4A14-810F-7F1D75111B4E}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TempCheckPiPy", "TempCheckPi\TempCheckPiPy.pyproj", "{A7C2B83D-8260-4A14-810F-7F1D75111B4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempCheckPiUI", "TempCheckPiUI\TempCheckPiUI.csproj", "{9F4B532A-5805-459B-AAFF-BA68F350E1BB}"
 EndProject

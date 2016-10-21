@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
   <PropertyGroup>
-    <Name>TempCheckPi</Name>
+    <Name>TempCheckPiPy</Name>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == 'Any CPU' ">x86</Platform>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -15,7 +15,8 @@
     <AppxPackageSigningEnabled>true</AppxPackageSigningEnabled>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <ProjectGuid>a7c2b83d-8260-4a14-810f-7f1d75111b4e</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <WorkingDirectory>.</WorkingDirectory>
     <StartupFile>StartupTask.py</StartupFile>
     <ContainsStartupTask>true</ContainsStartupTask>
